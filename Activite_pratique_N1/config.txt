@@ -1,2 +1,2 @@
-ext.DaoImplVWS
-metier.MetierImpl
+org.example.ma.ext.DaoImplVWS
+org.example.ma.metier.MetierImpl
