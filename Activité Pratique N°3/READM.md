@@ -1,1 +1,0 @@
-## Activité pratique 3
