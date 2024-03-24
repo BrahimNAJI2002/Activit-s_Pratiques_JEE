@@ -5,6 +5,6 @@
 
 ## Captures d'Écran
 
-![Capture d'écran 1](/images_8/1.png)
-![Capture d'écran 2](/images_8/2.png)
+![zd](imgs/1.png)
+![findall](imgs/2.png)
 
