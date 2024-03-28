@@ -21,7 +21,7 @@
         <div class="panel-body">
             <form th:action="@{/patients}" method="get">
                 <label for="nom">Mot clé : </label>
-                <input type="text" name="nom" id="nom" th:value="${motCle}">
+                <input type="text" name="motCle" id="nom" th:value="${motCle}">
                 <button type="submit" class="btn btn-primary">Rechercher</button>
             </form>
         </div>
@@ -38,20 +38,24 @@
                     <td th:text="${patient.malade}"></td>
                     <td>
                         <!--Icone suprimmer bootstrap-->
-                        <a class="btn btn-danger" onclick="return confirm('Êtes-vous sûr ?')" href="deletePatient.html" th:href="@{/deletePatient(id=${patient.id}, page=${currentPage},motCle=${motCle})}"><i class="bi bi-trash-fill"></i></a>
-                        <a class="btn btn-primary" href="editPatient.html" th:href="@{/editPatient(id=${patient.id})}"><i class="bi bi-pencil-square"></i></a>
+                        <a class="btn btn-danger" onclick="return confirm('Êtes-vous sûr ?')" th:href="@{/deletePatient(id=${patient.id}, page=${currentPage}, motCle=${motCle})}">
+                            <i class="bi bi-trash-fill"></i>
+                        </a>
+                        <a class="btn btn-primary" th:href="@{/editPatient(id=${patient.id})}">
+                            <i class="bi bi-pencil-square"></i>
+                        </a>
                     </td>
                 </tr>
             </table>
 
             <ul class="nav nav-pills ">
                 <li th:each="page,status:${pages}" th:class="${status.index == currentPage} ? 'active' : ''">
-                    <a href="patients.html" th:href="@{/patients(page=${status.index},motCle=${motCle})}" th:text="${status.index+1}"></a>
+                    <a th:href="@{/patients(page=${status.index}, motCle=${motCle})}" th:text="${status.index+1}"></a>
                 </li>
             </ul>
         </div>
     </div>
-
 </div>
+
 </body>
 </html>
