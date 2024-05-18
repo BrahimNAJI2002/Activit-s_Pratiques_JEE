@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Activite-Pratique-N4": {
+    "enset-app2": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/activite-pratique-n4",
+            "outputPath": "dist/enset-app2",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -38,7 +38,14 @@
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.js"
+            ],
+            "server": "src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -68,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Activite-Pratique-N4:build:production"
+              "buildTarget": "enset-app2:build:production"
             },
             "development": {
-              "buildTarget": "Activite-Pratique-N4:build:development"
+              "buildTarget": "enset-app2:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "Activite-Pratique-N4:build"
+            "buildTarget": "enset-app2:build"
           }
         },
         "test": {
@@ -104,6 +111,6 @@
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": "2dc04c7d-a2b5-44bf-80cb-6fcd3406725e"
   }
 }
